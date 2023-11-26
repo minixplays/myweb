@@ -42,7 +42,7 @@ for line in sys.stdin:
 > chmod +x mapper.py
 > chmod +x reducer.py
 
->To leave safe mode
+//To leave safe mode
 >hdfs dfsadmin -safemode leave
 
 > pwd
