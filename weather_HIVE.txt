@@ -1,0 +1,11 @@
+hdfs dfs -put weatherhistory.csv /user/cloudera
+
+>beeline -u jdbc:hive2://
+
+>CREATE TABLE weather(FDATE DATE,SUMMARY STRING,TYPE STRING,TEMP FLOAT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ':' STORED AS TEXTFILE;
+
+>LOAD DATA INPATH '/user/cloudera/weatherhistory.csv' OVERWRITE INTO TABLE weather;
+
+>SELECT MIN(TEMP) AS MIN_TEMP,MAX(TEMP) AS MAX_TEMP,AVG(TEMP) AS AVG_TEMP FROM weather;
+
+>!q

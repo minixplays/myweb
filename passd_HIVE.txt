@@ -1,0 +1,11 @@
+>hdfs dfs -put password.txt /user/cloudera
+
+>beeline -u jdbc:hive2://
+
+>CREATE TABLE userinfo(UNAME STRING,UID INT,GID INT,FULLNAME STRING,HDIR STRING,SHELL STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ':' STORED AS TEXTFILE;
+
+>LOAD DATA INPATH '/user/cloudera/password.txt' OVERWRITE INTO TABLE userinfo;
+
+>SELECT UNAME,FULLNAME,HDIR FROM userinfo ORDER BY UNAME;
+
+>!q

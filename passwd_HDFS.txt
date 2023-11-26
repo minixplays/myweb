@@ -1,0 +1,40 @@
+--->cp /etc/passwd /home/cloudera/passwd
+
+reducer.py
+#!/usr/bin/python
+import sys
+
+
+password= None
+oldKey= None
+
+
+for line in sys.stdin:
+     data_mapped = line.strip().split(":")
+     if len(data_mapped) != 2:
+          continue
+     thisKey, thisPass = data_mapped
+     if oldKey and oldKey != thisKey:
+          print(oldKey,":", password)
+          oldKey = thisKey;
+          password = thisPass;
+     oldKey = thisKey
+if oldKey != None:
+     print(oldKey,":", password)
+
+mapper.py
+#!/usr/bin/python
+import sys
+for line in sys.stdin:
+     data = line.strip().split(":")
+     if len(data) == 7:
+          username, password, uid, gid, fullname,hdirect, loginshell = data
+          print("{0}:{1}".format(username, password))
+
+> hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar \
+-input /user/cloudera/input \
+-output /user/cloudera/output \
+-mapper /home/cloudera/mapper.py \
+-reducer /home/cloudera/reducer.py
+
+>hdfs dfsadmin -safemode leave
