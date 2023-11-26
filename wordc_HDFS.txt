@@ -42,6 +42,9 @@ for line in sys.stdin:
 > chmod +x mapper.py
 > chmod +x reducer.py
 
+>To leave safe mode
+>hdfs dfsadmin -safemode leave
+
 > pwd
 
 > echo "A long time ago in a galaxy far far away" > /home/cloudera/testfile1
@@ -58,9 +61,6 @@ for line in sys.stdin:
  -output /user/cloudera/output \
  -mapper /home/cloudera/mapper.py \
  -reducer /home/cloudera/reducer.py
-
->To leave safe mode
->hdfs dfsadmin -safemode leave
 
 > To see the result from Hadoop output folder.
 > hdfs dfs -cat /user/cloudera/output/part-00000
