@@ -1,0 +1,11 @@
+>hdfs dfs -put dataset.txt /user/cloudera
+
+>beeline -u jdbc:hive2://
+
+>CREATE TABLE your_table_name(dataset_row_name data_type,dataset_row_name data_type) ROW FORMAT DELIMITED FIELDS TERMINATED BY ':' STORED AS TEXTFILE;
+
+>LOAD DATA INPATH '/user/cloudera/dataset.txt' OVERWRITE INTO TABLE your_table_name;
+
+>SELECT dataset_row_name,dataset_row_name FROM your_table_name ORDER BY dataset_row_name;
+
+>!q
