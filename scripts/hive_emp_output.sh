@@ -1,0 +1,524 @@
+#!/bin/bash
+
+sleep 2
+
+echo "
+0: jdbc:hive2://> select DISTINCT EmpID,FirstName,LastName from emp where MaritalDesc='Married';
+Query ID = cloudera_20231126201919_8936762a-e70e-4a96-9f2d-f13e3ceab9fc
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>"
+
+sleep 3
+
+echo "
+23/11/26 20:19:21 [HiveServer2-Background-Pool: Thread-239]: WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+Starting Job = job_1701052525273_0012, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1701052525273_0012/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1701052525273_0012
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+23/11/26 20:19:27 [HiveServer2-Background-Pool: Thread-239]: WARN mapreduce.Counters: Group org.apache.hadoop.mapred.Task$/Counter is deprecated. Use org.apache.hadoop.mapreduce.TaskCounter instead
+2023-11-26 20:19:27,650 Stage-1 map = 0%,  reduce = 0%
+2023-11-26 19:26:47,175 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.7 sec
+2023-11-26 19:26:57,679 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 9.14 sec
+MapReduce Total cumulative CPU time: 9 seconds 140 msec
+Ended Job = job_1701052525273_0009
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 9.14 sec   HDFS Read: 8721010 HDFS Write: 8701473 SUCCESS
+Total MapReduce CPU Time Spent: 9 seconds 140 msec
+OK"
+
+sleep 3
+
+echo "
++--------+-------------+--------------+--------+--+
+| empid  |  firstname  |   lastname   | state  |
++--------+-------------+--------------+--------+--+
+| 2178   | Francis     | Robbins      | MA     |
+| 2186   | Vivian      | Hickman      | MA     |
+| 2187   | Amaris      | Kirk         | MA     |
+| 2188   | Grant       | York         | MA     |
+| 2191   | Paul        | Moreno       | MA     |
+| 2193   | Joel        | Bowen        | MA     |
+| 2201   | Cayden      | Bartlett     | MA     |
+| 2202   | Desiree     | Walker       | MA     |
+| 2203   | Colton      | Le           | MA     |
+| 2208   | Lisa        | Galia        | CT     |
+| 2211   | Leonara     | Lindsay      | CT     |
+| 2213   | Branden     | Khan         | MA     |
+| 2214   | Aiden       | Wade         | MA     |
+| 2220   | Lilah       | Harrison     | MA     |
+| 2226   | Zechariah   | Strong       | MA     |
+| 2230   | Kane        | Mcfarland    | CT     |
+| 2234   | Ariel       | Barnes       | MA     |
+| 2240   | Pedro       | Nelson       | MA     |
+| 2241   | Carlo       | Carr         | MA     |
+| 2242   | Aileen      | Pacheco      | MA     |
+| 2243   | Dorian      | Wu           | CT     |
+| 2244   | Monica      | Pham         | CT     |
+| 2250   | Irene       | Kim          | CT     |
+| 2257   | Ingrid      | Lucero       | MA     |
+| 2275   | Michael     | Albert       | MA     |
+| 2280   | Ebonee      | Peterson     | MA     |
+| 2291   | Elisa       | Bramante     | MA     |
+| 2298   | Terry       | Gay          | MA     |
+| 2299   | Emiliano    | Rich         | MA     |
+| 2302   | Marlene     | Rhodes       | MA     |
+| 2306   | Ayanna      | Lutz         | MA     |
+| 2314   | Lia         | Blair        | MA     |
+| 2315   | Marcelo     | Flowers      | MA     |
+| 2327   | Parker      | Cunningham   | MA     |
+| 2330   | John        | Forbes       | MA     |
+| 2338   | Ivan        | Hull         | MA     |
+| 2339   | India       | Kemp         | MA     |
+| 2345   | Nyla        | Schwartz     | MA     |
+| 2353   | Dalia       | Booth        | MA     |
+| 2357   | Antoine     | Murray       | MA     |
+| 2358   | Summer      | Huang        | MA     |
+| 2359   | Jaylyn      | Contreras    | MA     |
+| 2362   | Nola        | Bullock      | MA     |
+| 2365   | Timothy     | Goodwin      | MA     |
+| 2371   | Ahmed       | Mcmahon      | MA     |
+| 2378   | Leticia     | Parks        | MA     |
+| 2380   | German      | Higgins      | MA     |
+| 2384   | Matthias    | Dunlap       | MA     |
+| 2399   | Brice       | Phillips     | MA     |
+| 2400   | Alvaro      | Le           | MA     |
+| 2403   | Ellis       | Maldonado    | MA     |
+| 2415   | Raelynn     | Lara         | MA     |
+| 2418   | Teagan      | Rodriguez    | MA     |
+| 2419   | Kaylyn      | Joyce        | MA     |
+| 2421   | Brycen      | York         | MA     |
+| 2432   | Rayna       | Gates        | MA     |
+| 2441   | Camden      | Mcclure      | MA     |
+| 2451   | Rosa        | Rosales      | MA     |
+| 2452   | Fabian      | Mullins      | MA     |
+| 2454   | Callum      | Mccormick    | MA     |
+| 2459   | Bradyn      | Pham         | RI     |
+| 2462   | Lainey      | York         | MA     |
+| 2467   | Talia       | Barrett      | MA     |
+| 2468   | Kailyn      | Torres       | MA     |
+| 2472   | Ariel       | May          | MA     |
+| 2474   | Aliana      | Blake        | MA     |
+| 2482   | Eric        | Dougall      | MA     |
+| 2486   | Ricardo     | Ruiz         | MA     |
+| 2488   | Braedon     | Welch        | MA     |
+| 2492   | Natalya     | Norman       | MA     |
+| 2494   | Owen        | Burch        | MA     |
+| 2495   | Abel        | Bush         | MA     |
+| 2499   | Ali         | Benjamin     | MA     |
+| 2500   | Annabelle   | Frederick    | MA     |
+| 2503   | Ally        | Goodman      | MA     |
+| 2509   | Madeleine   | Paul         | MA     |
+| 2519   | Melody      | Wright       | MA     |
+| 2522   | Zaniyah     | Parks        | MA     |
+| 2524   | Serena      | Barajas      | MA     |
+| 2525   | Larry       | Novak        | MA     |
+| 2527   | Nylah       | Hood         | MA     |
+| 2528   | Rigoberto   | Allen        | MA     |
+| 2536   | Alfred      | Rivas        | MA     |
+| 2539   | Casey       | Bradford     | MA     |
+| 2541   | Kayleigh    | Davenport    | MA     |
+| 2544   | Wade        | Hernandez    | MA     |
+| 2546   | Deven       | Huff         | MA     |
+| 2556   | Kaiden      | Cunningham   | MA     |
+| 2557   | Davion      | Vasquez      | MA     |
+| 2561   | Ashly       | Mullen       | MA     |
+| 2562   | Angelique   | Cochran      | MA     |
+| 2564   | Deandre     | Oneal        | MA     |
+| 2565   | Adison      | Huerta       | MA     |
+| 2566   | Elisabeth   | Bradley      | MA     |
+| 2577   | Jenna       | Dietrich     | WA     |
+| 2579   | Jackie      | Valentin     | AZ     |
+| 2583   | Gerry       | Friedman     | NY     |
+| 2590   | Stephanie   | Wilkinson    | AZ     |
+| 2605   | Jakayla     | Dickson      | AZ     |
+| 2607   | Lamont      | Summers      | AL     |
++--------+-------------+--------------+--------+--+
+| empid  |  firstname  |   lastname   | state  |
++--------+-------------+--------------+--------+--+
+| 2608   | Lewis       | Hobbs        | TN     |
+| 2612   | Amiya       | Richardson   | ID     |
+| 2616   | Destiney    | Navarro      | WA     |
+| 2618   | Anika       | Bender       | MA     |
+| 2620   | Kaylin      | Dillon       | MA     |
+| 2636   | Gwendolyn   | Hogan        | MA     |
+| 2639   | Simeon      | Roy          | AZ     |
+| 2641   | Gwendolyn   | Mccall       | AZ     |
+| 2645   | Breanna     | Kerr         | TN     |
+| 2648   | Nathaly     | Stevens      | ID     |
+| 2658   | Yuliana     | Levine       | AZ     |
+| 2661   | Avah        | Hayes        | TN     |
+| 2665   | Abdiel      | Good         | NY     |
+| 2668   | Lane        | Willis       | MA     |
+| 2672   | Quincy      | Shannon      | AZ     |
+| 2681   | Jaime       | Greer        | ID     |
+| 2688   | Luciana     | Steele       | AZ     |
+| 2690   | Joaquin     | Cuevas       | AZ     |
+| 2693   | Malcolm     | Rivas        | TN     |
+| 2695   | Isis        | Ortega       | ID     |
+| 2696   | Meadow      | Delgado      | ID     |
+| 2697   | Benjamin    | Goodman      | NY     |
+| 2699   | Cannon      | Gray         | WA     |
+| 2701   | Branden     | Ali          | MA     |
+| 2702   | Sophie      | Carrillo     | MA     |
+| 2707   | Annalise    | Olsen        | AL     |
+| 2708   | Theodore    | Castro       | TN     |
+| 2709   | Emily       | Freeman      | ID     |
+| 2712   | Helen       | Humphrey     | NY     |
+| 2713   | Abagail     | Villanueva   | NY     |
+| 2718   | Madalyn     | Prince       | AZ     |
+| 2721   | Emerson     | Zavala       | NC     |
+| 2731   | Denzel      | Jensen       | MA     |
+| 2734   | Maxim       | Mooney       | AZ     |
+| 2736   | Zara        | Werner       | AL     |
+| 2737   | Darian      | Hansen       | UT     |
+| 2738   | Kaeden      | Branch       | TN     |
+| 2742   | Samir       | Gray         | NH     |
+| 2743   | Stephanie   | Hampton      | WA     |
+| 2744   | Walter      | Mayo         | VT     |
+| 2747   | Sneha       | Jhaveri      | MA     |
+| 2754   | Louis       | Punjabhi     | MA     |
+| 2761   | Barbara     | Gaul         | MA     |
+| 2766   | Trina       | Hendrickson  | MA     |
+| 2768   | Jean        | Engdahl      | MA     |
+| 2772   | Alexandra   | Bean         | MA     |
+| 2779   | Lilly       | Huynh        | MA     |
+| 2780   | Anika       | Robbins      | MA     |
+| 2783   | Lorelei     | Sellers      | MA     |
+| 2796   | Destiny     | Blake        | MA     |
+| 2797   | Zaria       | Kidd         | MA     |
+| 2800   | Nayeli      | Keith        | MA     |
+| 2802   | Lucy        | Harrington   | MA     |
+| 2803   | Rebecca     | Francis      | MA     |
+| 2804   | Salma       | Frederick    | MA     |
+| 2807   | Brian       | Kelly        | MA     |
+| 2810   | Jabari      | Stanton      | MA     |
+| 2816   | Ricardo     | Mcdonald     | MA     |
+| 2826   | Roger       | Kaufman      | MA     |
+| 2827   | Ignacio     | Mcintyre     | MA     |
+| 2830   | Leslie      | Maynard      | MA     |
+| 2832   | Lilyana     | Huffman      | MA     |
+| 2833   | Jacey       | Reeves       | MA     |
+| 2839   | Jaylee      | Cunningham   | MA     |
+| 2841   | Darien      | Doyle        | MA     |
+| 2843   | Manuel      | Haley        | MA     |
+| 2847   | Mallory     | Carey        | MA     |
+| 2854   | Eileen      | Beard        | MA     |
+| 2856   | Sage        | Boyer        | MA     |
+| 2858   | Colin       | Simpson      | MA     |
+| 2860   | Maria       | Cameron      | MA     |
+| 2868   | Lisa        | Griffin      | MA     |
+| 2870   | Sanai       | Sweeney      | MA     |
+| 2872   | Greta       | Horne        | MA     |
+| 2878   | Shania      | Barrera      | MA     |
+| 2879   | Trystan     | Fernandez    | MA     |
+| 2883   | Slade       | Lynn         | MA     |
+| 2884   | Riley       | Leon         | MA     |
+| 2886   | Michelle    | Pearson      | MA     |
+| 2887   | Natalya     | Reyes        | MA     |
+| 2895   | Mauricio    | Stein        | MA     |
+| 2922   | Miles       | Roberts      | MA     |
+| 2923   | Joel        | Spence       | MA     |
+| 2924   | Kole        | Garrison     | MA     |
+| 2936   | Jordan      | Hayes        | MA     |
+| 2937   | Kianna      | Wilkerson    | MA     |
+| 2938   | Paul        | Steele       | MA     |
+| 2950   | Charlize    | Rocha        | MA     |
+| 2955   | Adison      | Ray          | MA     |
+| 2963   | Kendrick    | Snyder       | MA     |
+| 2967   | Sade        | Smith        | MA     |
+| 2969   | Lauren      | Peters       | MA     |
+| 2973   | Jacquelyn   | Williams     | MA     |
+| 2975   | Bradley J   | Knapp        | MA     |
+| 2982   | Tanya       | Foreman      | MA     |
+| 2985   | Anthony     | Heitzman     | MA     |
+| 2988   | Justice     | Gentry       | MA     |
+| 2992   | Moshe       | Copeland     | MA     |
+| 2994   | Sammy       | Walter       | MA     |
+| 2997   | Jaqueline   | Ford         | MA     |
++--------+-------------+--------------+--------+--+
+| empid  |  firstname  |   lastname   | state  |
++--------+-------------+--------------+--------+--+
+| 3007   | Madeline    | Powell       | MA     |
+| 3009   | Aracely     | Kelly        | MA     |
+| 3010   | Morgan      | Velazquez    | MA     |
+| 3019   | Elyse       | Morrow       | MA     |
+| 3022   | Leonel      | Chang        | MA     |
+| 3025   | Kyan        | Miranda      | MA     |
+| 3028   | Teagan      | Phelps       | MA     |
+| 3031   | Reed        | Brandt       | MA     |
+| 3032   | Cristofer   | Schwartz     | MA     |
+| 3037   | Catalina    | Eaton        | MA     |
+| 3047   | Francesca   | Lowe         | MA     |
+| 3048   | Violet      | Horn         | MA     |
+| 3049   | Carlie      | Wagner       | MA     |
+| 3054   | Zaniyah     | Mccarthy     | MA     |
+| 3061   | Kaylynn     | Odom         | MA     |
+| 3069   | Jaylen      | Donaldson    | MA     |
+| 3071   | Erick       | Wood         | MA     |
+| 3076   | Omari       | Keller       | MA     |
+| 3077   | Asher       | Miles        | MA     |
+| 3087   | Corinne     | Campos       | MA     |
+| 3088   | Heaven      | Nelson       | MA     |
+| 3090   | Morgan      | Roth         | MA     |
+| 3092   | Beckett     | Sandoval     | MA     |
+| 3097   | Rigoberto   | Gentry       | MA     |
+| 3104   | Ashton      | Winters      | MA     |
+| 3105   | Josie       | Melton       | MA     |
+| 3108   | Oswaldo     | Hanson       | MA     |
+| 3109   | Samara      | Roberson     | MA     |
+| 3116   | Johnathan   | Harmon       | MA     |
+| 3117   | Camren      | Bridges      | MA     |
+| 3123   | Zaiden      | Leblanc      | MA     |
+| 3127   | Lillianna   | Hull         | MA     |
+| 3133   | Aydin       | Dixon        | MA     |
+| 3134   | Heidi       | Joyce        | MA     |
+| 3136   | Cesar       | Anderson     | MA     |
+| 3141   | Aliya       | Morton       | MA     |
+| 3144   | Shannon     | Lambert      | MA     |
+| 3155   | Amy         | Frederick    | MA     |
+| 3156   | Pierce      | Charles      | MA     |
+| 3159   | Mollie      | Woodward     | MA     |
+| 3163   | Geovanni    | Crawford     | MA     |
+| 3164   | Danielle    | Blanchard    | MA     |
+| 3168   | Deshawn     | Henry        | MA     |
+| 3170   | Demarcus    | Huffman      | MA     |
+| 3173   | Tucker      | Sweeney      | MA     |
+| 3178   | Wayne       | Leon         | MA     |
+| 3182   | Dexter      | Preston      | MA     |
+| 3189   | Jasiah      | Palmer       | MA     |
+| 3191   | Monserrat   | Miranda      | MA     |
+| 3198   | Violet      | Bennett      | MA     |
+| 3199   | Hannah      | Jacobi       | MA     |
+| 3200   | Peter       | Robertson    | MA     |
+| 3205   | Roxana      | Goyal        | MA     |
+| 3211   | Phylicia    | Gosciminski  | MA     |
+| 3212   | Mohammed    | Latif        | MA     |
+| 3222   | Gloria      | Small        | MA     |
+| 3226   | Drake       | Ashley       | MA     |
+| 3235   | Emmett      | York         | MA     |
+| 3236   | Landin      | Walton       | MA     |
+| 3237   | Landon      | Mayo         | MA     |
+| 3240   | Kyan        | Fritz        | MA     |
+| 3243   | Harley      | Peterson     | MA     |
+| 3245   | Leonel      | Tanner       | MA     |
+| 3246   | Natalia     | Burns        | MA     |
+| 3250   | Seth        | Fletcher     | MA     |
+| 3264   | Alani       | Phillips     | MA     |
+| 3266   | Max         | Mahoney      | MA     |
+| 3269   | Caiden      | Hogan        | MA     |
+| 3277   | Wade        | Beltran      | MA     |
+| 3278   | Mina        | Bryant       | MA     |
+| 3279   | Jonas       | Everett      | MA     |
+| 3282   | Rebekah     | Carpenter    | MA     |
+| 3283   | Iris        | Reynolds     | MA     |
+| 3291   | Shamar      | Serrano      | MA     |
+| 3293   | Lillianna   | Hill         | MA     |
+| 3296   | Isis        | Brooks       | MA     |
+| 3297   | Axel        | Dunlap       | MA     |
+| 3300   | Rosemary    | Becker       | MA     |
+| 3302   | Maya        | Mccoy        | MA     |
+| 3306   | Justice     | Guerra       | MA     |
+| 3307   | Quincy      | Cardenas     | MA     |
+| 3308   | Alyvia      | Mitchell     | MA     |
+| 3310   | George      | Fritz        | MA     |
+| 3312   | Saniya      | Mosley       | MA     |
+| 3313   | Aimee       | Davila       | MA     |
+| 3319   | Madelynn    | Murillo      | MA     |
+| 3323   | Lilliana    | Cowan        | MA     |
+| 3328   | Braylen     | Cruz         | MA     |
+| 3340   | Mina        | Hancock      | MA     |
+| 3343   | Seth        | Huff         | MA     |
+| 3344   | Justine     | Villanueva   | MA     |
+| 3351   | Kayden      | Hill         | MA     |
+| 3353   | Haven       | Donaldson    | MA     |
+| 3356   | Cade        | Heath        | MA     |
+| 3357   | Sidney      | Hooper       | MA     |
+| 3359   | Anika       | Arroyo       | MA     |
+| 3360   | Fatima      | Kemp         | MA     |
+| 3363   | Trevor      | Barry        | MA     |
+| 3368   | Karli       | Parks        | MA     |
+| 3371   | Aliya       | Moss         | MA     |
++--------+-------------+--------------+--------+--+
+| empid  |  firstname  |   lastname   | state  |
++--------+-------------+--------------+--------+--+
+| 3373   | Karter      | Thornton     | MA     |
+| 3379   | Marquis     | Joseph       | MA     |
+| 3384   | Dennis      | Hays         | MA     |
+| 3389   | Finley      | Medina       | MA     |
+| 3390   | Lizeth      | Middleton    | MA     |
+| 3393   | Skyla       | Santiago     | MA     |
+| 3396   | Stephen     | Mcmillan     | MA     |
+| 3401   | Taniya      | Kane         | MA     |
+| 3403   | Dillon      | Larson       | MA     |
+| 3414   | Hunter      | Silva        | MA     |
+| 3416   | Aron        | Waters       | MA     |
+| 3420   | Levi        | Hayden       | MA     |
+| 3426   | Chace       | Kerr         | MA     |
+| 3431   | Jasmine     | Onque        | FL     |
+| 3432   | Maruk       | Fraval       | CT     |
+| 3438   | Dheepa      | Nguyen       | GA     |
+| 3445   | Reid        | Park         | KY     |
+| 3454   | Leon        | Beard        | KY     |
+| 3460   | Alisa       | James        | TX     |
+| 3461   | Lincoln     | Compton      | CO     |
+| 3466   | Clayton     | Walker       | KY     |
+| 3470   | Esteban     | Gilbert      | TX     |
+| 3471   | Jonathan    | Adkins       | TX     |
+| 3472   | Nevaeh      | Soto         | TX     |
+| 3478   | Thomas      | Chandler     | KY     |
+| 3492   | Vicente     | Merritt      | CO     |
+| 3495   | Tia         | Ellis        | IN     |
+| 3502   | Eugene      | Marks        | TX     |
+| 3504   | Javon       | Kelley       | CO     |
+| 3506   | Laila       | Woodard      | IN     |
+| 3509   | Cruz        | Boyer        | KY     |
+| 3510   | Raven       | Koch         | KY     |
+| 3513   | Damaris     | Cisneros     | TX     |
+| 3514   | Alexus      | Estes        | TX     |
+| 3518   | Roberto     | Michael      | CA     |
+| 3527   | Ahmed       | Hawkins      | CO     |
+| 3533   | Slade       | Griffith     | ND     |
+| 3537   | Neveah      | Rowe         | TX     |
+| 3541   | Aaron       | Weber        | IN     |
+| 3542   | Ellie       | Gill         | IN     |
+| 3547   | Adriel      | Wiggins      | KY     |
+| 3551   | Emery       | Roach        | TX     |
+| 3561   | Dianna      | Blount       | MA     |
+| 3570   | Adrienne J  | Homberger    | MA     |
+| 3578   | Clinton     | Owad         | MA     |
+| 3580   | Davion      | Sanchez      | MA     |
+| 3583   | Gracelyn    | Huynh        | MA     |
+| 3584   | Orlando     | Armstrong    | MA     |
+| 3591   | Abdullah    | Ellison      | MA     |
+| 3593   | Brayden     | Malone       | MA     |
+| 3594   | Maribel     | Morrison     | MA     |
+| 3598   | Derick      | Rocha        | MA     |
+| 3601   | Keagan      | Henson       | MA     |
+| 3602   | Helena      | Davenport    | MA     |
+| 3603   | Houston     | Aguirre      | MA     |
+| 3607   | Frankie     | Atkins       | MA     |
+| 3608   | Ally        | Zhang        | MA     |
+| 3611   | Rowan       | Cobb         | MA     |
+| 3613   | Amirah      | Johnson      | MA     |
+| 3614   | Bridget     | Deleon       | MA     |
+| 3616   | Ruben       | Lewis        | MA     |
+| 3617   | Bailey      | Collier      | MA     |
+| 3618   | Charlee     | Roth         | MA     |
+| 3619   | Karissa     | Bowers       | MA     |
+| 3620   | Noel        | Ramirez      | MA     |
+| 3621   | Victoria    | Franco       | MA     |
+| 3624   | Cesar       | Higgins      | MA     |
+| 3627   | Ruth        | Harrell      | MA     |
+| 3628   | Peyton      | Barber       | MA     |
+| 3632   | Ryan        | Oconnell     | MA     |
+| 3634   | Keyon       | Haley        | MA     |
+| 3644   | Madisyn     | Andrews      | MA     |
+| 3649   | Elisha      | Ruiz         | MA     |
+| 3652   | Owen        | Dillon       | MA     |
+| 3655   | Martha      | Kemp         | MA     |
+| 3661   | Reagan      | Brennan      | MA     |
+| 3662   | Hugh        | Berry        | MA     |
+| 3665   | Dalton      | Bowen        | MA     |
+| 3689   | Rashad      | Wells        | MA     |
+| 3693   | Amya        | Vega         | MA     |
+| 3694   | Nickolas    | West         | MA     |
+| 3698   | Julien      | Banks        | MA     |
+| 3704   | Addisyn     | Aguilar      | MA     |
+| 3708   | Case        | Gaines       | MA     |
+| 3712   | Kyra        | Ray          | MA     |
+| 3714   | Aleena      | Mercer       | MA     |
+| 3716   | Chaim       | Chase        | MA     |
+| 3717   | Keshawn     | Le           | MA     |
+| 3718   | Dalton      | Frazier      | MA     |
+| 3722   | Nehemiah    | Hancock      | MA     |
+| 3723   | Elliana     | Villanueva   | MA     |
+| 3726   | Averi       | Stevenson    | MA     |
+| 3735   | Chace       | Gray         | MA     |
+| 3736   | Carsen      | Wheeler      | MA     |
+| 3742   | Gabriel     | Pearson      | MA     |
+| 3743   | Mercedes    | Cook         | MA     |
+| 3748   | Aron        | Ali          | MA     |
+| 3749   | Kayden      | Soto         | MA     |
+| 3754   | Arielle     | Potts        | MA     |
+| 3755   | Maxwell     | Howell       | MA     |
++--------+-------------+--------------+--------+--+
+| empid  |  firstname  |   lastname   | state  |
++--------+-------------+--------------+--------+--+
+| 3756   | Junior      | Bridges      | MA     |
+| 3759   | Gabriella   | Warner       | MA     |
+| 3761   | Hazel       | Vincent      | MA     |
+| 3769   | Ivan        | Wright       | MA     |
+| 3770   | Nayeli      | Hood         | MA     |
+| 3771   | Marilyn     | Smith        | MA     |
+| 3776   | Jacqueline  | Hendrix      | MA     |
+| 3778   | Semaj       | Griffith     | MA     |
+| 3788   | Maxim       | Houston      | MA     |
+| 3792   | Alexia      | Pham         | MA     |
+| 3793   | Roselyn     | Roberts      | MA     |
+| 3796   | Jefferson   | White        | MA     |
+| 3797   | Maria       | Grant        | MA     |
+| 3800   | Amya        | Grant        | MA     |
+| 3806   | Isabella    | Wilkins      | MA     |
+| 3825   | Danika      | Deleon       | MA     |
+| 3829   | Jaqueline   | Pittman      | MA     |
+| 3834   | Monique     | Pierce       | MA     |
+| 3848   | Nathaly     | Huffman      | MA     |
+| 3851   | Vance       | Marquez      | CT     |
+| 3858   | Bailey      | Humphrey     | MA     |
+| 3859   | Clare       | English      | MA     |
+| 3862   | Eden        | Armstrong    | CT     |
+| 3864   | Tiffany     | Washington   | MA     |
+| 3874   | Aspen       | Reyes        | CT     |
+| 3879   | Liam        | Hanna        | MA     |
+| 3882   | Litzy       | Esparza      | MA     |
+| 3893   | Lukas       | Freeman      | MA     |
+| 3894   | Yesenia     | Nielsen      | MA     |
+| 3897   | Jenna       | Maddox       | CT     |
+| 3906   | Amaris      | Miller       | MA     |
+| 3907   | Barrett     | Wilcox       | MA     |
+| 3908   | Kimberly    | Watson       | MA     |
+| 3909   | Rebecca     | Park         | MA     |
+| 3913   | Henry       | Zimmerman    | MA     |
+| 3921   | Alessandra  | Lee          | MA     |
+| 3929   | Jeramiah    | Foster       | MA     |
+| 3930   | Bruce       | Wallace      | MA     |
+| 3933   | Laylah      | Branch       | MA     |
+| 3938   | Lori        | Roby         | MA     |
+| 3939   | Thomas      | Murray       | TX     |
+| 3941   | Ivan        | Rogers       | MA     |
+| 3942   | Bianca      | Roehrich     | MA     |
+| 3946   | Jayne       | Horton       | MA     |
+| 3947   | Renee       | Becker       | MA     |
+| 3948   | Randall     | Pearson      | MA     |
+| 3953   | Mark        | Griffith     | MA     |
+| 3954   | Denisse     | Hayes        | MA     |
+| 3955   | Draven      | Giles        | MA     |
+| 3958   | Mohammed    | Orr          | TX     |
+| 3960   | Andreas     | Torres       | TX     |
+| 3965   | Precious    | Roth         | MA     |
+| 3967   | Anastasia   | Gillespie    | MA     |
+| 3968   | Emely       | Rice         | MA     |
+| 3970   | Macy        | Webster      | MA     |
+| 3974   | Zander      | Franco       | TX     |
+| 3979   | Peyton      | Phelps       | MA     |
+| 3980   | Carmen      | Atkins       | MA     |
+| 3982   | Yair        | Jennings     | MA     |
+| 3983   | Kaylie      | Velazquez    | MA     |
+| 3986   | Dennis      | Key          | TX     |
+| 3992   | Evelin      | Snow         | MA     |
+| 3993   | Sienna      | Preston      | MA     |
+| 3998   | Ace         | Krause       | TX     |
++--------+-------------+--------------+--------+--+"
+
+sleep 2
+
+echo "
+764 rows selected (22.026 seconds)
+0: jdbc:hive2://>"
