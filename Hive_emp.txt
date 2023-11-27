@@ -1,0 +1,13 @@
+>hdfs dfs -put employee.csv /user/cloudera
+
+>beeline -u jdbc:hive2://
+
+>CREATE TABLE employee(﻿EmpID INT,FirstName STRING,LastName STRING,StartDate DATE,ExitDate DATE,Title STRING,Supervisor STRING,ADEmail STRING,BusinessUnit STRING,EmployeeStatus STRING,EmployeeType STRING,PayZone STRING,EmployeeClassificationType STRING,TerminationType STRING,TerminationDescription STRING,DepartmentType STRING,Division STRING,DOB DATE,State STRING,JobFunctionDescription STRING,GenderCode INT,LocationCode INT,RaceDesc STRING,MaritalDesc STRING,Performance_Score INT,Current_Employee_Rating INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE;
+
+>LOAD DATA INPATH '/user/cloudera/employee.csv' OVERWRITE INTO TABLE userinfo;
+
+>SELECT EmpID,FirstName,LastName,Current_Employee_Rating FROM employee where MaritalDesc='Single';
+
+// You can try any other SELECT query to fetch the data ☝️
+
+>!q
